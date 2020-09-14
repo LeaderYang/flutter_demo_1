@@ -60,49 +60,48 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildSuggestions() {
-    return _buildGrid();
-//    new ListView.builder(
-//        // 对于每个建议的单词对都会调用一次itemBuilder，然后将单词对添加到ListTile行中
-//        // 在偶数行，该函数会为单词对添加一个ListTile row.
-//        // 在奇数行，该函数会添加一个分割线widget，来分隔相邻的词对。
-//        // 注意，在小屏幕上，分割线看起来可能比较吃力。
-//        itemBuilder: (context, i) {
-//      // 在每一列之前，添加一个1像素高的分隔线widget
-//      if (i.isOdd) return new Divider();
-//
-//      // 语法 "i ~/ 2" 表示i除以2，但返回值是整形（向下取整），比如i为：1, 2, 3, 4, 5
-//      // 时，结果为0, 1, 1, 2, 2， 这可以计算出ListView中减去分隔线后的实际单词对数量
-//      final index = i ~/ 2;
-//      // 如果是建议列表中最后一个单词对
-//      if (index >= _suggestions.length) {
-//        // ...接着再生成10个单词对，然后添加到建议列表
-//        _suggestions.addAll(generateWordPairs().take(7));
-//        _images.add("assets/images/dart.jpg");
-//        _images.add("assets/images/icon_head.png");
-//        _images.add("assets/images/java.jpeg");
-//        _images.add("assets/images/kotlin.jpg");
-//        _images.add("assets/images/leaf.png");
-//        _images.add("assets/images/left_chat.png");
-//        _images.add("assets/images/pica.gif");
-//      }
-//      return _buildRow(_suggestions[index], index, _images[index]);
-//    });
+    return new ListView.builder(
+        // 对于每个建议的单词对都会调用一次itemBuilder，然后将单词对添加到ListTile行中
+        // 在偶数行，该函数会为单词对添加一个ListTile row.
+        // 在奇数行，该函数会添加一个分割线widget，来分隔相邻的词对。
+        // 注意，在小屏幕上，分割线看起来可能比较吃力。
+        itemBuilder: (context, i) {
+      // 在每一列之前，添加一个1像素高的分隔线widget
+      if (i.isOdd) return new Divider();
+
+      // 语法 "i ~/ 2" 表示i除以2，但返回值是整形（向下取整），比如i为：1, 2, 3, 4, 5
+      // 时，结果为0, 1, 1, 2, 2， 这可以计算出ListView中减去分隔线后的实际单词对数量
+      final index = i ~/ 2;
+      // 如果是建议列表中最后一个单词对
+      if (index >= _suggestions.length) {
+        // ...接着再生成10个单词对，然后添加到建议列表
+        _suggestions.addAll(generateWordPairs().take(7));
+        _images.add("assets/images/dart.jpg");
+        _images.add("assets/images/icon_head.png");
+        _images.add("assets/images/java.jpeg");
+        _images.add("assets/images/kotlin.jpg");
+        _images.add("assets/images/leaf.png");
+        _images.add("assets/images/left_chat.png");
+        _images.add("assets/images/pica.gif");
+      }
+      return _buildRow(_suggestions[index], index, _images[index]);
+    });
   }
 
-  Widget _buildGrid() => GridView.extent(
-      maxCrossAxisExtent: 150,
-      padding: const EdgeInsets.all(4),
-      mainAxisSpacing: 4,
-      crossAxisSpacing: 4,
-      children: _buildGridTileList());
+//  Widget _buildGrid() => GridView.extent(
+//      maxCrossAxisExtent: 150,
+//      padding: const EdgeInsets.all(4),
+//      mainAxisSpacing: 4,
+//      crossAxisSpacing: 4,
+//      children: _buildGridTileList());
 
 // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
 // The List.generate() constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
-  List<Widget> _buildGridTileList() {
-    var photos = _getPhotos();
-    return List.generate(100, (i) =>  Container(child: _getImage(photos, i)));
-  }
+//  List<Widget> _buildGridTileList() {
+//    var photos = _getPhotos();
+//    return List.generate(100, (i) =>  Container(child: _getImage(photos, i)));
+//  }
 
   Future<List<AlbumModelEntity>> _getPhotos() async {
     return await PhotoAlbumManager.getDescAlbumImg(maxCount: 1);
