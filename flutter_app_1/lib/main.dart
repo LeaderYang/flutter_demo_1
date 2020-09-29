@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'my_home_page.dart';
-import 'new_route.dart';
+import 'first/my_home_page.dart';
+import 'first/new_route.dart';
 
 void main() => runApp(new MyApp1());
 
 class MyApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     print("MyApp1 build");
     return new MaterialApp(
       title: "demo",

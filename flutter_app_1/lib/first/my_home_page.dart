@@ -35,6 +35,7 @@ class _MyHOmePageState extends State<MyHomePage> {
               "$_counter",
               style: Theme.of(context).textTheme.display1,
             ),
+            new Image.asset("assets/images/icon_head.png"),
             FlatButton(
               child: Text("open new Route"),
               textColor: Colors.deepOrange,
@@ -51,7 +52,7 @@ class _MyHOmePageState extends State<MyHomePage> {
       floatingActionButton: new FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: "Increment",
-        child: new Icon(Icons.add),
+        child: new Image.asset("assets/images/icon_head.png"),
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp1/tip_route.dart';
+import 'file:///E:/WorkSpace/git/flutter_1/flutter_app_1/lib/first/tip_route.dart';
 
 class RouterTestRoute extends StatelessWidget {
   @override
