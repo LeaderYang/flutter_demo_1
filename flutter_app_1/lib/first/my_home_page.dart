@@ -40,6 +40,7 @@ class _MyHOmePageState extends State<MyHomePage> {
               child: Text("open new Route"),
               textColor: Colors.deepOrange,
               onPressed: () {
+                debugDumpApp();
                 Navigator.pushNamed(context, "new_page", arguments: "参数传递222");
 //                Navigator.push(context, MaterialPageRoute(builder: (context) {
 //                  return NewRoute();
