@@ -42,9 +42,9 @@ class _HomePageState extends State<HomePage> {
         decoration: new BoxDecoration(    //用一个BoxDecoration装饰器提供背景图片
           image: new DecorationImage(
             fit: BoxFit.fill,
-            // image: new NetworkImage('https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg')
+            image: new NetworkImage('https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg')
             //可以试试图片调取自本地。调用本地资源，需要到pubspec.yaml中配置文件路径
-            image: new ExactAssetImage('assets/images/kotlin.jpg'),
+            // image: new ExactAssetImage('assets/images/kotlin.jpg'),
           ),
         ),
       ),
